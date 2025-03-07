@@ -286,6 +286,7 @@ public abstract class GunItem extends Item {
         fire(entity, stack, direction, smokeOffset);
         entity.playSound(fireSound(stack), 3.5f, 1);
         setLoaded(stack, false);
+        player.getCooldowns().addCooldown(this, 20);
     }
 
     public static int reloadDuration(ItemStack stack) {
